@@ -1,5 +1,5 @@
 get '/' do
-
+  "oh, snap"
 end
 
 get '/401' do
