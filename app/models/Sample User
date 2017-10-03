@@ -1,0 +1,31 @@
+# REMEMBER to update variables based on input/tables. Encrypted_password, etc.
+# REMEMBER to update authentication requests based on requirement (username, email, etc.)
+
+def password
+  @password ||= BCrypt::Password.new(encrypted_password)
+end
+
+def password=(plaintext_password)
+  @check_that_password = plain_text_password
+  @password = BCrypt::Password.create(plaintext_password)
+  self.encrypted_password = @password
+end
+
+def self.authenticate(email, password)
+  user = find_by(email: email)
+  if user && user.password == password
+    user
+  else
+    nil
+  end
+end
+
+validate :validate_password
+
+def validate_password
+  if @check_that_password.nil?
+    errors.add(:password, "is required")
+  elsif @check_that_password.length < 8
+    errors.add(:password, "must be at least 8 characters")
+  end
+end
