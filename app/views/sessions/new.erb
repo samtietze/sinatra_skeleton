@@ -1,5 +1,15 @@
 <h2>Please log in:</h2>
 
-<form>
+<%= erb :_errors, locals: { errors: @errors } %>
 
-</form>
+<div class='login-field-container'>
+  <form action='/login' method='post'>
+    <label class='block' for='email'>Email:
+      <input class='form-field' type='email' name='email' placeholder='Email' id='email'>
+    </label>
+    <label class='block' for='password'>Password:
+      <input class='form-field' type='password' name='password' placeholder='Password' id='password'>
+    </label>
+    <input id='login-button' class='no-style-form-button' type='submit' value='log in'>
+  </form>
+</div>

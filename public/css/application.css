@@ -1,2 +1,24 @@
-body {
+.block {
+  display: block;
+}
+
+.login-field-container {
+  width: 300px;
+  padding: 15px;
+}
+
+.form-field {
+  width: 97%;
+  padding: 2px;
+}
+
+.no-style-form-button {
+  display: inline;
+  background: none !important;
+  color: inherit;
+  border: none;
+  padding: 0 !important;
+  font: inherit;
+  text-decoration: underline;
+  cursor: pointer;
 }
