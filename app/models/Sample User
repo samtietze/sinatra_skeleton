@@ -16,8 +16,8 @@ def self.authenticate(email, password)
   if user && user.password == password
     user
   else
-    nil
-  end
+   nil
+ end
 end
 
 validate :validate_password
