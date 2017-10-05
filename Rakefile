@@ -23,7 +23,7 @@ namespace :generate do
     puts "Generating #{model_path}"
     File.open(model_path, 'w+') do |f|
       f.write(<<-EOF.strip_heredoc)
-        class #{model_name} < ApplicationRecord[5.1]
+        class #{model_name} < ApplicationRecord
         end
       EOF
     end
